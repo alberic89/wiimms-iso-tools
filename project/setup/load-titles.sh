@@ -84,7 +84,7 @@ function load_and_store()
 
     echo "***    load $DEST from $URI"
 
-    if webget "$URI" | wit titles / - >"$DEST.tmp" && test -s "$DEST.tmp"
+    if webget "$URI" | LC_ALL=C sort - | wit titles / - >"$DEST.tmp" && test -s "$DEST.tmp"
     then
 	if [[ $ADD != "" ]]
 	then
